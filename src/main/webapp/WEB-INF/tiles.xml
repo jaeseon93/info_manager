@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="myapp.homepage" template="/views/tilestest/tiles/layout.jsp">
+        <put-attribute name="title" value="Tiles tutorial homepage" />
+        <put-attribute name="header" value="/views/tilestest/tiles/banner.jsp" />
+        <put-attribute name="menu" value="/views/tilestest/tiles/common_menu.jsp" />
+        <put-attribute name="body" value="/views/tilestest/tiles/home_body.jsp" />
+        <put-attribute name="footer" value="/views/tilestest/tiles/credits.jsp" />
+    </definition>
+
+
+    <definition name="admin/*/*" template="/views/tilestest/tiles/adminlayout.jsp">
+
+        <put-attribute name="title" value="Tiles tutorial homepage" />
+        <put-attribute name="header" value="/views/tilestest/tiles/banner.jsp" />
+        <put-attribute name="menu" value="/views/tilestest/tiles/common_menu.jsp" />
+        <put-attribute name="footer" value="/views/tilestest/tiles/credits.jsp" />
+        <put-attribute name="body" value="/{1}/{2}.jsp" />
+    </definition>
+        <!-- infoview -->
+    <definition name="infoview" template="/views/infoviews/info_entire.jsp">
+        <put-attribute name="title" value="Tiles tutorial homepage" />
+        <put-attribute name="header" value="/views/infoviews/info_nav.jsp" />
+        <put-attribute name="footer" value="/views/infoviews/info_footer.jsp" />
+    </definition>
+    <definition name="info_view/*" extends="infoview">
+        <put-attribute name="title" value="Tiles tutorial homepage" />
+        <put-attribute name="body" value="/views/infoviews/{1}.jsp" />
+    </definition>
+    <!-- infoview End-->
+
+    <!-- mainview test-->
+    <definition name="main" template="/views/mainview_test/main.jsp">
+        <put-attribute name="title" value="Tiles tutorial homepage" />
+        <put-attribute name="header" value="/views/mainview_test/main_top.jsp" />
+        <put-attribute name="side" value="/views/mainview_test/main_left.jsp" />
+    </definition>
+
+
+    <definition name="main/*" extends="main">
+        <put-attribute name="body" value="/views/mainview_test/{1}.jsp" />
+    </definition>
+
+    <!-- mainview test end -->
+</tiles-definitions>

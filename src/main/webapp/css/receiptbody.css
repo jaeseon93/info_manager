@@ -1,0 +1,18 @@
+@charset "UTF-8";
+.border {
+	border-left-style: 10px solid black;
+}
+
+.input {
+	width: 70%;
+}
+
+.label {
+	text-align: center;
+	padding-top: 23px;
+	padding-left: 10px;
+}
+
+.padding {
+	padding-top: 17px;
+}
